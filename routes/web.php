@@ -42,7 +42,7 @@ Route::middleware('auth')->group(function () {
     ->name('products.images.destroy');
     Route::get('/get-regencies/{province_id}', [LocationController::class, 'getRegencies'])->name('getRegencies');
     Route::get('/product/{metalink}', [\App\Http\Controllers\ProductController::class, 'show'])
-    ->name('products.show');
+    ->name('products.metalink');
 });
 
 ?>
