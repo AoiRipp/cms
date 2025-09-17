@@ -1,0 +1,26 @@
+services:
+  laravel:
+    container_name: homi-cms
+    build:
+      context: ./docker/8.1
+      dockerfile: Dockerfile
+      args:
+        WWWGROUP: '${WWWGROUP}'
+    image: homi-cms-8.1/app
+    ports:
+      - '${APP_PORT:-3000}:80'
+    environment:
+      WWWUSER: '${WWWUSER}'
+      LARAVEL_SAIL: 1
+    volumes:
+      - '.:/var/www/html'
+      - '../storage:/var/www/storage'
+    networks:
+      - sail
+      - external_mysql
+
+networks:
+  sail:
+    driver: bridge
+  external_mysql:
+    external: true
