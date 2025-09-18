@@ -9,6 +9,7 @@ use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\RegencyController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\SettingController;
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
@@ -43,6 +44,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/get-regencies/{province_id}', [LocationController::class, 'getRegencies'])->name('getRegencies');
     Route::get('/product/{metalink}', [\App\Http\Controllers\ProductController::class, 'show'])
     ->name('products.metalink');
+    Route::get('/settings', [SettingController::class, 'edit'])->name('settings.edit');
+    Route::post('/settings', [SettingController::class, 'update'])->name('settings.update');
 });
 
 ?>

@@ -37,7 +37,7 @@
                     <tr>
                         <td>
                             @if($product->images->first())
-                                <img src="{{ asset('storage/' . $product->images->first()->path) }}" 
+                                <img src="{{ Storage::disk('storage')->url($product->images->first()->path) }}" 
                                     alt="{{ $product->title }}" 
                                     style="width:60px; height:60px; object-fit:cover; border-radius:6px;">
                             @else

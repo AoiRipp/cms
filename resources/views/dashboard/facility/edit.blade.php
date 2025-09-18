@@ -26,7 +26,7 @@
 
       @if($facility->icon)
         <p>Current Icon:</p>
-        <img src="{{ asset('storage/' . $facility->icon) }}" alt="{{ $facility->name }}" width="80">
+        <img src="{{ Storage::disk('storage')->url($facility->icon_path) }}" alt="{{ $facility->name }}" width="80">
       @endif
 
       <div class="switch mt-3">

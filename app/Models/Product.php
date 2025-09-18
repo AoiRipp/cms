@@ -11,7 +11,8 @@ class Product extends Model
         'meta_title', 'meta_description', 'meta_tags',
         'province_id', 'regency_id', 'category_id',
         'price', 'luas_tanah', 'luas_bangunan',
-        'kamar_tidur', 'kamar_mandi', 'status'
+        'kamar_tidur', 'kamar_mandi', 'status',
+        'youtube_embed', 'google_map'
     ];
 
     public function province() {

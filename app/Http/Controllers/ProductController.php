@@ -85,7 +85,9 @@ class ProductController extends Controller
                 'luas_tanah',
                 'luas_bangunan',
                 'kamar_mandi',
-                'kamar_tidur'
+                'kamar_tidur',
+                'youtube_embed',
+                'google_map'
             ]));
 
             $product->promos()->sync($request->promos ?? []);
@@ -175,7 +177,9 @@ class ProductController extends Controller
                 'luas_tanah',
                 'luas_bangunan',
                 'kamar_mandi',
-                'kamar_tidur'
+                'kamar_tidur',
+                'youtube_embed',
+                'google_map'
             ]));
 
             $product->promos()->sync($request->promos ?? []);

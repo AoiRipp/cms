@@ -133,6 +133,19 @@
                 <label class="active">Facilities</label>
             </div>
 
+            {{-- YouTube Embed --}}
+            <div class="input-field col s12">
+                <input type="text" name="youtube_embed" 
+                    value="{{ old('youtube_embed', $product->youtube_embed ?? '') }}">
+                <label for="youtube_embed">YouTube Embed (iframe code or link)</label>
+            </div>
+
+            {{-- Google Map --}}
+            <div class="input-field col s12">
+                <textarea name="google_map" class="materialize-textarea">{{ old('google_map', $product->google_map ?? '') }}</textarea>
+                <label for="google_map">Google Map Embed (iframe code)</label>
+            </div>
+
             {{-- Attributes --}}
             <div class="col s12">
                 <label class="active">Attributes</label>
@@ -179,7 +192,7 @@
                 <div class="row">
                     @foreach($product->images as $img)
                     <div class="col s3">
-                        <img src="{{ asset('storage/' . $img->path) }}" class="responsive-img" alt="Product image">
+                        <img src="{{ Storage::disk('storage')->url($img->path) }}" class="responsive-img" alt="Product image">
                     </div>
                     @endforeach
                 </div>
