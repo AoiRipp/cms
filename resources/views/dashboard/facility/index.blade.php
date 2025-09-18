@@ -36,7 +36,7 @@
             <tr>
               <td>
                 @if($facility->icon_path)
-                  <img src="{{ Storage::url($facility->icon_path) }}" 
+                  <img src="{{ Storage::disk('storage')->url($facility->icon_path) }}" 
                        alt="{{ $facility->name }}" 
                        width="40" height="40" 
                        style="object-fit: contain;">
