@@ -24,14 +24,6 @@ Route::middleware('auth')->group(function () {
         return view('dashboard.index');
     })->name('dashboard');
 
-    // Route::get('/products', function () {
-    //     return view('dashboard.products');
-    // })->name('products');
-
-    Route::get('/settings', function () {
-        return view('dashboard.settings');
-    })->name('settings');
-
     Route::resource('categories', CategoryController::class);
     Route::resource('promos', PromoController::class);
     Route::resource('attributes', PropertyAttributeController::class);
