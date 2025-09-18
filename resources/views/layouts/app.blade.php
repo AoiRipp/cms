@@ -105,7 +105,7 @@ $configData = Helper::applClasses();
             </li>
 
             <li class="bold">
-                <a href="{{ route('settings') }}" class="waves-effect waves-cyan">
+                <a href="{{ route('settings.edit') }}" class="waves-effect waves-cyan">
                     <i class="material-icons">settings</i>
                     <span>Setting</span>
                 </a>
