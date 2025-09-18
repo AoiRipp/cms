@@ -36,8 +36,15 @@ class Product extends Model
         return $this->belongsToMany(Facility::class, 'product_facility');
     }
 
-    public function attributes() {
-        return $this->belongsToMany(PropertyAttribute::class, 'product_attribute')->withPivot('value');
+    public function attributes()
+    {
+        return $this->belongsToMany(
+            PropertyAttribute::class,
+            'product_attribute',
+            'product_id',
+            'property_attribute_id'
+        )->withPivot('value')
+        ->withTimestamps();
     }
 
     public function images() {

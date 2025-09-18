@@ -93,9 +93,9 @@ class ProductController extends Controller
             $product->promos()->sync($request->promos ?? []);
             $product->facilities()->sync($request->facilities ?? []);
 
-            if ($request->has('attributes')) {
+            if ($request->filled('attributes')) {
                 $syncData = [];
-                foreach ($request->attributes as $attr) {
+                foreach ($request->input('attributes') as $attr) {
                     if (!empty($attr['id'])) {
                         $syncData[$attr['id']] = ['value' => $attr['value'] ?? null];
                     }
@@ -185,9 +185,9 @@ class ProductController extends Controller
             $product->promos()->sync($request->promos ?? []);
             $product->facilities()->sync($request->facilities ?? []);
 
-            if ($request->has('attributes')) {
+            if ($request->filled('attributes')) {
                 $syncData = [];
-                foreach ($request->attributes as $attr) {
+                foreach ($request->input('attributes') as $attr) {
                     if (!empty($attr['id'])) {
                         $syncData[$attr['id']] = ['value' => $attr['value'] ?? null];
                     }
