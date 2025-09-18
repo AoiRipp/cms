@@ -12,6 +12,6 @@ class Promo extends Model
     protected $fillable = [
         'title',
         'description',
-        'active',
+        'status',
     ];
 }

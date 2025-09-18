@@ -23,10 +23,10 @@ class PromoController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'description' => 'nullable|string',
-            'active' => 'boolean',
+            'status' => 'boolean',
         ]);
 
-        Promo::create($request->only(['title', 'description', 'active']));
+        Promo::create($request->only(['title', 'description', 'status']));
 
         return redirect()->route('promos.index')->with('success', 'Promo created successfully.');
     }
@@ -41,10 +41,10 @@ class PromoController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'description' => 'nullable|string',
-            'active' => 'boolean',
+            'status' => 'boolean',
         ]);
 
-        $promo->update($request->only(['title', 'description', 'active']));
+        $promo->update($request->only(['title', 'description', 'status']));
 
         return redirect()->route('promos.index')->with('success', 'Promo updated successfully.');
     }

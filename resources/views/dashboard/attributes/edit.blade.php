@@ -28,7 +28,7 @@
           <label>
             Inactive
             <input type="hidden" name="status" value="0">
-            <input type="checkbox" name="status" value="1" {{ old('status', $attribute->status) ? 'checked' : '' }}>
+            <input type="checkbox" name="status" value="1" {{ old('status', $attribute->status ?? 0) == 1 ? 'checked' : '' }}>
             <span class="lever"></span>
             Active
           </label>

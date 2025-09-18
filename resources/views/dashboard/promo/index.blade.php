@@ -37,8 +37,8 @@
               <td>{{ $promo->title }}</td>
               <td>{{ $promo->description }}</td>
               <td>
-                <span class="badge {{ $promo->active ? 'green' : 'red' }} white-text">
-                  {{ $promo->active ? 'Active' : 'Inactive' }}
+                <span class="badge {{ $promo->status ? 'green' : 'red' }} white-text">
+                  {{ $promo->status ? 'Active' : 'Inactive' }}
                 </span>
               </td>
               <td class="center-align">
